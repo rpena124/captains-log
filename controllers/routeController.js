@@ -11,6 +11,7 @@ router.get('/new', viewController.newView)
 //DELETE
 //UPDATE
 //CREATE
+router.post('/', dataController.create, viewController.redirectShow )
 //EDIT
 //SHOW
 

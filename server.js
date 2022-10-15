@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 
 //create and express app
 const app = express()
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:true})) //This allows us to parse incoming request
 app.use((req, res, next)=>{
     res.locals.data = {}
         next()
@@ -21,6 +21,7 @@ app.use(methodOverride('_method'))
 
 //link to the controller files
 app.use('/logs', require('./controllers/routeController'))
+
 //Tell the app to listen on a port
 app.listen(3000, ()=>{
     console.log("Listening on port 3000")
