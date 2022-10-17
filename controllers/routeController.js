@@ -6,6 +6,7 @@ const viewController = require('./viewController')
 const dataController = require('./dataController')
 
 //INDEX
+router.get('/', dataController.index, viewController.index)
 //NEW
 router.get('/new', viewController.newView)
 //DELETE
@@ -14,6 +15,7 @@ router.get('/new', viewController.newView)
 router.post('/', dataController.create, viewController.redirectShow )
 //EDIT
 //SHOW
+router.get('/:id', dataController.show, viewController.show)
 
 
 module.exports = router

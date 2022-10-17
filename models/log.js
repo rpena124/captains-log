@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 //schema tells us what we cannot do
 const logSchema = new mongoose.Schema({
-    title:{type:string , required: true},
-    entry:{type:string, required:true},
+    title:{type:String, required: true},
+    entry:{type:String, required:true},
     shipIsBroken: Boolean
 },{timestamps:true})
 

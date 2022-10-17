@@ -8,7 +8,7 @@ const app = express()
 app.use(express.urlencoded({extended:true})) //This allows us to parse incoming request
 app.use((req, res, next)=>{
     res.locals.data = {}
-        next()
+    next()
     
 })
 
