@@ -1,6 +1,6 @@
 const {update} = require('../models/log')
 const Log = require('../models/log')
-
+// INDUCES
 const dataController = {
     //Index
     index(req, res, next){
@@ -11,6 +11,20 @@ const dataController = {
                 })
             }else{
                 res.locals.data.logs = foundFruit
+                next()
+            }
+        })
+    },
+    //DELETE
+    destroy(req, res, next){
+        Log.findByIdAndDelete(req.params.id, (err, deletedFruit)=>{
+            if(err){
+                res.status(400).send({
+                    msg:err.message
+                })
+            }
+            else{
+                res.locals.data.log = deletedFruit
                 next()
             }
         })

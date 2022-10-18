@@ -15,6 +15,9 @@ const viewController = {
         res.redirect(`${RESOURCE_PATH}/${logId}`)
         
         // res.redirect(`${RESOURCE_PATH}/${res.locals.data.log.id}`)
+    },
+    redirectHome(req, res, next){
+        res.redirect(RESOURCE_PATH)
     }
 }
 

@@ -7,7 +7,7 @@ class Default extends React.Component{
             <html>
                 <head>
                     {/* //To Do: add in the style sheet in the link */}
-                    {/* <link rel="stylesheet" href="..."></link> */}
+                    <link rel="stylesheet" href="/css/app.css"></link>
                     <title>{title}</title>
                 </head>
                 <body>
@@ -20,7 +20,7 @@ class Default extends React.Component{
                     <h1>
                         {title}
                     </h1>
-                    {this.props.chidlren}
+                    {this.props.children}
                 </body>
             </html>
         )

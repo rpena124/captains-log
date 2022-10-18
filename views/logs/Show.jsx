@@ -6,15 +6,11 @@ class Show extends React.Component{
         const {title, entry,shipIsBroken, _id} = this.props.log;
         const capName = title[0].toUpperCase()+ title.substring(1)
         return(
-            <>
-                <nav>
-                <a href="/logs/new">Create New Log</a>
-                <a href="/logs">Index Page</a>
-                </nav>
-                <p>{title}</p><br/>
+            <Default title={`${capName} Show Page`}>
+                <p>{capName}</p><br/>
                 <p>{entry}</p><br/>
                 <p>{shipIsBroken? 'Ship is not broken' : 'Ship is broken!'}</p>
-            </>
+            </Default>
         )
     }
 }

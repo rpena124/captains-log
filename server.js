@@ -1,7 +1,7 @@
 require('dotenv').config()
 //load express framework
 const express = require('express')
-const methodOverride = require('method-override')
+const methodOverride = require('method-override') //this has to do with Delete route
 const db = require('./models/db')
 //create and express app
 const app = express()
@@ -9,7 +9,6 @@ app.use(express.urlencoded({extended:true})) //This allows us to parse incoming 
 app.use((req, res, next)=>{
     res.locals.data = {}
     next()
-    
 })
 
 //view engine
@@ -23,6 +22,9 @@ db.once('open', () =>{
 
 //middleware
 app.use(methodOverride('_method'))
+
+//We are going to statically show whats in the public directory
+app.use(express.static('public'))
 
 //link to the controller files
 app.use('/logs', require('./controllers/routeController'))

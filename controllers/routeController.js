@@ -10,6 +10,7 @@ router.get('/', dataController.index, viewController.index)
 //NEW
 router.get('/new', viewController.newView)
 //DELETE
+router.delete('/:id', dataController.destroy ,viewController.redirectHome)
 //UPDATE
 //CREATE
 router.post('/', dataController.create, viewController.redirectShow )
