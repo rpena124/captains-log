@@ -4,27 +4,27 @@ const Log = require('../models/log')
 const dataController = {
     //Index
     index(req, res, next){
-        Log.find({},(err, foundFruit)=>{
+        Log.find({},(err, foundLog)=>{
             if(err){
                 res.status(400).send({
                     msg: err.message
                 })
             }else{
-                res.locals.data.logs = foundFruit
+                res.locals.data.logs = foundLog
                 next()
             }
         })
     },
     //DELETE
     destroy(req, res, next){
-        Log.findByIdAndDelete(req.params.id, (err, deletedFruit)=>{
+        Log.findByIdAndDelete(req.params.id, (err, deletedLog)=>{
             if(err){
                 res.status(400).send({
                     msg:err.message
                 })
             }
             else{
-                res.locals.data.log = deletedFruit
+                res.locals.data.log = deletedLog
                 next()
             }
         })
@@ -44,14 +44,14 @@ const dataController = {
         })
     },
     show(req, res, next){
-        Log.findById(req.params.id, (err, foundFruit)=>{
+        Log.findById(req.params.id, (err, foundLog)=>{
             if(err){
                 res.status(404).send({
                     msg:err.message,
-                    output:"Could not find fruit with that ID"
+                    output:"Could not find log with that ID"
                 })
             }else{
-                res.locals.data.log = foundFruit
+                res.locals.data.log = foundLog
                 next()
             }
         })

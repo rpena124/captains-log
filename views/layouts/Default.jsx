@@ -15,7 +15,7 @@ class Default extends React.Component{
                         <a href="/logs">Home</a>
                         <a href="/logs/new">New Log</a>
                         {log? <a href={`/logs/${log._id}/edit`}>{log.title} Edit Page</a> :""}
-                        {log? <a href={`/logs/${log._id}`}>{log.title}Show Page</a>:""}
+                        {log? <a href={`/logs/${log.id}`}>{log.title}Show Page</a>:""}
                     </nav>
                     <h1>
                         {title}
