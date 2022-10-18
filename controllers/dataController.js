@@ -15,7 +15,7 @@ const dataController = {
             }
         })
     },
-    //DELETE
+    //DESTROY
     destroy(req, res, next){
         Log.findByIdAndDelete(req.params.id, (err, deletedLog)=>{
             if(err){
@@ -28,6 +28,22 @@ const dataController = {
                 next()
             }
         })
+    },
+    //UPDATE
+    update(req, res, next){
+        req.body.shipIsBroken = req.body.shipIsBroken == "on" ? true : false;
+       Log.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedLog)=>{
+         if(err){
+            res.status(400).send({
+                msg: err.message,
+                output:"Cant update your log"
+            })
+         }
+         else{
+            res.locals.data.log = updatedLog
+            next()
+         }
+       })
     },
     //CREATE
     create(req,res,next){

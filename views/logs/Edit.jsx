@@ -6,7 +6,7 @@ class Edit extends React.Component{
         const {title, _id, entry,shipIsBroken} = this.props.log
         return(
             <Default title={`${title} Edit Page`} log={this.props.log}>
-                <form method="POST" action={`/fruits/${_id}?_method=PUT`}>
+                <form method="POST" action={`/logs/${_id}?_method=PUT`}>
                     Title:<input type="text" name="title" defaultValue={title}></input><br/>
                     Entry:<input type="text" name="entry" defaultValue={entry}></input><br/>
                     Is Ship Broken:<input type="checkbox" name="shipIsBroken" defaultChecked={shipIsBroken}></input><br/>
