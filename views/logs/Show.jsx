@@ -9,7 +9,7 @@ class Show extends React.Component{
             <Default title={`${capName} Show Page`}>
                 <p>{capName}</p><br/>
                 <p>{entry}</p><br/>
-                <p>{shipIsBroken? 'Ship is not broken' : 'Ship is broken!'}</p>
+                <p>{shipIsBroken? 'Ship is broken!' : 'Ship is not broken' }</p>
             </Default>
         )
     }

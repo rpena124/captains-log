@@ -15,7 +15,7 @@ class Index extends React.Component{
 
                                 <li key={log._id}>
                                     <a href={`/logs/${log._id}`}>{title}</a><br/>
-                                    {shipIsBroken? 'It\'s not broken': 'It\'s broken'}<br/>
+                                    {shipIsBroken?  'It\'s broken': 'It\'s not broken'}<br/>
                                     <form method="POST" action={`/logs/${log._id}?_method=DELETE`}>
                                         <input type="submit" value={`Delete${title}`}></input>
                                     </form>

@@ -31,7 +31,8 @@ const dataController = {
     },
     //UPDATE
     update(req, res, next){
-        req.body.shipIsBroken = req.body.shipIsBroken == "on" ? true : false;
+
+        req.body.shipIsBroken = req.body.shipIsBroken == "on" ? true : false
        Log.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedLog)=>{
          if(err){
             res.status(400).send({
@@ -41,13 +42,14 @@ const dataController = {
          }
          else{
             res.locals.data.log = updatedLog
-            next()
+            next() 
          }
        })
     },
     //CREATE
     create(req,res,next){
-        req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false 
+
+        req.body.shipIsBroken = req.body.shipIsBroken == "on" ? true : false
         Log.create(req.body , (err, createdLog)=>{
             if(err){
                 res.status(400).send({

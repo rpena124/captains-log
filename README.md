@@ -7,6 +7,6 @@
 |2| Show|/logs/:id | GET|Show.jsx | Log.findById()|
 |3| New | /logs/new | NEW | New.jsx | none|
 |4|Create| /logs/ | POST | none | Log.create(req.body)|
-|5|Edit | /logs/:id/edit| GET| Edit.jsx | Log.findByID()|
+|5|Edit | /logs/:id/edit| GET| Edit.jsx | Log.findById()|
 |6|Update|/logs/:id | PUT | none |Log.findByIdAndUpdate(req.params.id, req.body)|
 |7| Destroy | /logs/:id | DELETE | none | findByIdAndDelete(req.params.id)|
